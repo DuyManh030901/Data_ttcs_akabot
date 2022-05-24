@@ -1,0 +1,271 @@
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="data" mva:VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="data_1"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:rab="clr-namespace:RCA.Activities.Browser;assembly=RCA.Activities.Browser"
+ xmlns:rac="clr-namespace:RCA.Activities.Core;assembly=RCA.Activities.Core"
+ xmlns:rae="clr-namespace:RCA.Activities.Excel;assembly=RCA.Activities.Excel"
+ xmlns:re="clr-namespace:RCA.Excel;assembly=RCA.Activities.Excel"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:sd="clr-namespace:System.Data;assembly=System.Data"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>RCA.Excel</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>RCA.Activities.Excel</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="data" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="Data" />
+      <Variable x:TypeArguments="sd:DataTable" Name="Data1" />
+      <Variable x:TypeArguments="sd:DataTable" Name="Data2" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dataTGDD1" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dataTGDD2" />
+      <Variable x:TypeArguments="sd:DataTable" Name="datahnam1" />
+    </Sequence.Variables>
+    <rab:OpenBrowser DefaultDownloadFolder="{x:Null}" HttpProxy="{x:Null}" Password="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" UserName="{x:Null}" BrowserName="Chrome" ContinueOnError="False" DisplayName="[089904473] Open Browser(B)" EnsureCleanSession="False" HideCommandPromptWindow="True" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Maximize="False" QuitBrowserOnCompletedOrFaulted="True" ShowDownloadPrompt="True" Url="https://www.hnammobile.com/dien-thoai?filter=p-desc&amp;page=5#top_site" UseInitialBrowserUrl="False">
+      <rab:OpenBrowser.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="[089912914] Do" sap2010:WorkflowViewState.IdRef="Sequence_1">
+            <rab:ExtractStructuredData Browser="{x:Null}" ContinueOnError="{x:Null}" Html="{x:Null}" DelayBetweenPagesMS="1000" DisplayName="[623964264] Extract Structured Data(B)" sap2010:WorkflowViewState.IdRef="ExtractStructuredData_6" MaxNumberResult="100" Result="[datahnam1]" Selector="{}{&#xD;&#xA;  &quot;Columns&quot;: [&#xD;&#xA;    {&#xD;&#xA;      &quot;Name&quot;: &quot;Column1&quot;,&#xD;&#xA;      &quot;Tag&quot;: &quot;a&quot;,&#xD;&#xA;      &quot;Attribute&quot;: null,&#xD;&#xA;      &quot;ClassName&quot;: &quot;&quot;,&#xD;&#xA;      &quot;Paths&quot;: [&#xD;&#xA;        &quot;div[2]/h3[1]/a[1]&quot;&#xD;&#xA;      ],&#xD;&#xA;      &quot;Index&quot;: 0,&#xD;&#xA;      &quot;ExtractUrl&quot;: false,&#xD;&#xA;      &quot;NameUrl&quot;: &quot;&quot;&#xD;&#xA;    },&#xD;&#xA;    {&#xD;&#xA;      &quot;Name&quot;: &quot;Column2&quot;,&#xD;&#xA;      &quot;Tag&quot;: &quot;b&quot;,&#xD;&#xA;      &quot;Attribute&quot;: null,&#xD;&#xA;      &quot;ClassName&quot;: &quot;&quot;,&#xD;&#xA;      &quot;Paths&quot;: [&#xD;&#xA;        &quot;div[2]/div[2]/b[1]&quot;&#xD;&#xA;      ],&#xD;&#xA;      &quot;Index&quot;: 0,&#xD;&#xA;      &quot;ExtractUrl&quot;: false,&#xD;&#xA;      &quot;NameUrl&quot;: null&#xD;&#xA;    },&#xD;&#xA;    {&#xD;&#xA;      &quot;Name&quot;: &quot;Column3&quot;,&#xD;&#xA;      &quot;Tag&quot;: &quot;del&quot;,&#xD;&#xA;      &quot;Attribute&quot;: null,&#xD;&#xA;      &quot;ClassName&quot;: &quot;&quot;,&#xD;&#xA;      &quot;Paths&quot;: [&#xD;&#xA;        &quot;div[2]/div[2]/span[1]/del[1]&quot;&#xD;&#xA;      ],&#xD;&#xA;      &quot;Index&quot;: 0,&#xD;&#xA;      &quot;ExtractUrl&quot;: false,&#xD;&#xA;      &quot;NameUrl&quot;: null&#xD;&#xA;    },&#xD;&#xA;    {&#xD;&#xA;      &quot;Name&quot;: &quot;Column4&quot;,&#xD;&#xA;      &quot;Tag&quot;: &quot;span&quot;,&#xD;&#xA;      &quot;Attribute&quot;: null,&#xD;&#xA;      &quot;ClassName&quot;: &quot;start-result-count&quot;,&#xD;&#xA;      &quot;Paths&quot;: [&#xD;&#xA;        &quot;div[2]/section[1]/div[1]/span[1]&quot;&#xD;&#xA;      ],&#xD;&#xA;      &quot;Index&quot;: 0,&#xD;&#xA;      &quot;ExtractUrl&quot;: false,&#xD;&#xA;      &quot;NameUrl&quot;: null&#xD;&#xA;    },&#xD;&#xA;    {&#xD;&#xA;      &quot;Name&quot;: &quot;Column5&quot;,&#xD;&#xA;      &quot;Tag&quot;: &quot;div&quot;,&#xD;&#xA;      &quot;Attribute&quot;: null,&#xD;&#xA;      &quot;ClassName&quot;: &quot;pay-0&quot;,&#xD;&#xA;      &quot;Paths&quot;: [&#xD;&#xA;        &quot;div[1]/div[1]&quot;&#xD;&#xA;      ],&#xD;&#xA;      &quot;Index&quot;: 0,&#xD;&#xA;      &quot;ExtractUrl&quot;: false,&#xD;&#xA;      &quot;NameUrl&quot;: null&#xD;&#xA;    }&#xD;&#xA;  ],&#xD;&#xA;  &quot;ScopeSelector&quot;: &quot;/html[1]/body[1]/main[1]/section[4]/div[1]/div[1]/div[2]/div[1]&quot;,&#xD;&#xA;  &quot;NextPageSelector&quot;: null,&#xD;&#xA;  &quot;MaxNumberResult&quot;: 100,&#xD;&#xA;  &quot;ExtractTable&quot;: false&#xD;&#xA;}" TimeoutMS="30000" />
+            <rac:CommentOut DisplayName="[329853754] Comment Out" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+              <rac:CommentOut.Body>
+                <Sequence DisplayName="[329855760] Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <rab:ExtractStructuredData Browser="{x:Null}" ContinueOnError="{x:Null}" Html="{x:Null}" DelayBetweenPagesMS="1000" DisplayName="[249868444] Extract Structured Data(B)" sap2010:WorkflowViewState.IdRef="ExtractStructuredData_5" MaxNumberResult="100" Result="[dataTGDD2]" Selector="{}{&#xD;&#xA;  &quot;Columns&quot;: [&#xD;&#xA;    {&#xD;&#xA;      &quot;Name&quot;: &quot;bonho&quot;,&#xD;&#xA;      &quot;Tag&quot;: &quot;li&quot;,&#xD;&#xA;      &quot;Attribute&quot;: null,&#xD;&#xA;      &quot;ClassName&quot;: &quot;merge__item&quot;,&#xD;&#xA;      &quot;Paths&quot;: [&#xD;&#xA;        &quot;a[1]/div[3]/ul[1]/li[2]&quot;&#xD;&#xA;      ],&#xD;&#xA;      &quot;Index&quot;: 0,&#xD;&#xA;      &quot;ExtractUrl&quot;: false,&#xD;&#xA;      &quot;NameUrl&quot;: &quot;&quot;&#xD;&#xA;    },&#xD;&#xA;    {&#xD;&#xA;      &quot;Name&quot;: &quot;gia&quot;,&#xD;&#xA;      &quot;Tag&quot;: &quot;strong&quot;,&#xD;&#xA;      &quot;Attribute&quot;: null,&#xD;&#xA;      &quot;ClassName&quot;: &quot;price&quot;,&#xD;&#xA;      &quot;Paths&quot;: [&#xD;&#xA;        &quot;a[1]/strong[1]&quot;&#xD;&#xA;      ],&#xD;&#xA;      &quot;Index&quot;: 0,&#xD;&#xA;      &quot;ExtractUrl&quot;: false,&#xD;&#xA;      &quot;NameUrl&quot;: &quot;&quot;&#xD;&#xA;    },&#xD;&#xA;    {&#xD;&#xA;      &quot;Name&quot;: &quot;giagoc&quot;,&#xD;&#xA;      &quot;Tag&quot;: &quot;p&quot;,&#xD;&#xA;      &quot;Attribute&quot;: null,&#xD;&#xA;      &quot;ClassName&quot;: &quot;price-old&quot;,&#xD;&#xA;      &quot;Paths&quot;: [&#xD;&#xA;        &quot;a[1]/div[4]/p[1]&quot;&#xD;&#xA;      ],&#xD;&#xA;      &quot;Index&quot;: 0,&#xD;&#xA;      &quot;ExtractUrl&quot;: false,&#xD;&#xA;      &quot;NameUrl&quot;: &quot;&quot;&#xD;&#xA;    },&#xD;&#xA;    {&#xD;&#xA;      &quot;Name&quot;: &quot;danhgia&quot;,&#xD;&#xA;      &quot;Tag&quot;: &quot;p&quot;,&#xD;&#xA;      &quot;Attribute&quot;: null,&#xD;&#xA;      &quot;ClassName&quot;: &quot;item-rating-total&quot;,&#xD;&#xA;      &quot;Paths&quot;: [&#xD;&#xA;        &quot;a[1]/div[4]/p[2]&quot;,&#xD;&#xA;        &quot;a[1]/div[5]/p[2]&quot;&#xD;&#xA;      ],&#xD;&#xA;      &quot;Index&quot;: 0,&#xD;&#xA;      &quot;ExtractUrl&quot;: false,&#xD;&#xA;      &quot;NameUrl&quot;: &quot;&quot;&#xD;&#xA;    },&#xD;&#xA;    {&#xD;&#xA;      &quot;Name&quot;: &quot;name&quot;,&#xD;&#xA;      &quot;Tag&quot;: &quot;h3&quot;,&#xD;&#xA;      &quot;Attribute&quot;: null,&#xD;&#xA;      &quot;ClassName&quot;: &quot;&quot;,&#xD;&#xA;      &quot;Paths&quot;: [&#xD;&#xA;        &quot;a[1]/h3[1]&quot;&#xD;&#xA;      ],&#xD;&#xA;      &quot;Index&quot;: 0,&#xD;&#xA;      &quot;ExtractUrl&quot;: false,&#xD;&#xA;      &quot;NameUrl&quot;: &quot;&quot;&#xD;&#xA;    }&#xD;&#xA;  ],&#xD;&#xA;  &quot;ScopeSelector&quot;: &quot;/html[1]/body[1]/section[1]/div[3]/ul[1]&quot;,&#xD;&#xA;  &quot;NextPageSelector&quot;: &quot;.//*[@id='categoryPage']/div[3]/ul/li[76]/a[1]/h3&quot;,&#xD;&#xA;  &quot;MaxNumberResult&quot;: 100,&#xD;&#xA;  &quot;ExtractTable&quot;: false&#xD;&#xA;}" TimeoutMS="30000" />
+                  <rab:ExtractStructuredData Browser="{x:Null}" ContinueOnError="{x:Null}" Html="{x:Null}" DelayBetweenPagesMS="1000" DisplayName="[680079311] Extract Structured Data(B)" sap2010:WorkflowViewState.IdRef="ExtractStructuredData_4" MaxNumberResult="100" Result="[dataTGDD1]" Selector="{}{&#xD;&#xA;  &quot;Columns&quot;: [&#xD;&#xA;    {&#xD;&#xA;      &quot;Name&quot;: &quot;name&quot;,&#xD;&#xA;      &quot;Tag&quot;: &quot;h3&quot;,&#xD;&#xA;      &quot;Attribute&quot;: null,&#xD;&#xA;      &quot;ClassName&quot;: &quot;&quot;,&#xD;&#xA;      &quot;Paths&quot;: [&#xD;&#xA;        &quot;a[1]/h3[1]&quot;&#xD;&#xA;      ],&#xD;&#xA;      &quot;Index&quot;: 0,&#xD;&#xA;      &quot;ExtractUrl&quot;: false,&#xD;&#xA;      &quot;NameUrl&quot;: &quot;&quot;&#xD;&#xA;    },&#xD;&#xA;    {&#xD;&#xA;      &quot;Name&quot;: &quot;bonho&quot;,&#xD;&#xA;      &quot;Tag&quot;: &quot;li&quot;,&#xD;&#xA;      &quot;Attribute&quot;: null,&#xD;&#xA;      &quot;ClassName&quot;: &quot;merge__item&quot;,&#xD;&#xA;      &quot;Paths&quot;: [&#xD;&#xA;        &quot;a[1]/div[3]/ul[1]/li[1]&quot;&#xD;&#xA;      ],&#xD;&#xA;      &quot;Index&quot;: 0,&#xD;&#xA;      &quot;ExtractUrl&quot;: false,&#xD;&#xA;      &quot;NameUrl&quot;: &quot;&quot;&#xD;&#xA;    },&#xD;&#xA;    {&#xD;&#xA;      &quot;Name&quot;: &quot;gia&quot;,&#xD;&#xA;      &quot;Tag&quot;: &quot;strong&quot;,&#xD;&#xA;      &quot;Attribute&quot;: null,&#xD;&#xA;      &quot;ClassName&quot;: &quot;price&quot;,&#xD;&#xA;      &quot;Paths&quot;: [&#xD;&#xA;        &quot;a[1]/strong[1]&quot;&#xD;&#xA;      ],&#xD;&#xA;      &quot;Index&quot;: 0,&#xD;&#xA;      &quot;ExtractUrl&quot;: false,&#xD;&#xA;      &quot;NameUrl&quot;: &quot;&quot;&#xD;&#xA;    },&#xD;&#xA;    {&#xD;&#xA;      &quot;Name&quot;: &quot;giagoc&quot;,&#xD;&#xA;      &quot;Tag&quot;: &quot;p&quot;,&#xD;&#xA;      &quot;Attribute&quot;: null,&#xD;&#xA;      &quot;ClassName&quot;: &quot;price-old&quot;,&#xD;&#xA;      &quot;Paths&quot;: [&#xD;&#xA;        &quot;a[1]/div[4]/p[1]&quot;&#xD;&#xA;      ],&#xD;&#xA;      &quot;Index&quot;: 0,&#xD;&#xA;      &quot;ExtractUrl&quot;: false,&#xD;&#xA;      &quot;NameUrl&quot;: &quot;&quot;&#xD;&#xA;    }&#xD;&#xA;  ],&#xD;&#xA;  &quot;ScopeSelector&quot;: &quot;/html[1]/body[1]/section[1]/div[3]/ul[1]&quot;,&#xD;&#xA;  &quot;NextPageSelector&quot;: null,&#xD;&#xA;  &quot;MaxNumberResult&quot;: 100,&#xD;&#xA;  &quot;ExtractTable&quot;: false&#xD;&#xA;}" TimeoutMS="30000" />
+                  <rab:ExtractStructuredData Browser="{x:Null}" ContinueOnError="{x:Null}" Html="{x:Null}" DelayBetweenPagesMS="1000" DisplayName="[103120763] Extract Structured Data(B)" sap2010:WorkflowViewState.IdRef="ExtractStructuredData_3" MaxNumberResult="100" Result="[Data2]" Selector="{}{&#xD;&#xA;  &quot;Columns&quot;: [&#xD;&#xA;    {&#xD;&#xA;      &quot;Name&quot;: &quot;name&quot;,&#xD;&#xA;      &quot;Tag&quot;: &quot;a&quot;,&#xD;&#xA;      &quot;Attribute&quot;: null,&#xD;&#xA;      &quot;ClassName&quot;: &quot;cdt-product__name&quot;,&#xD;&#xA;      &quot;Paths&quot;: [&#xD;&#xA;        &quot;div[2]/h3[1]/a[1]&quot;&#xD;&#xA;      ],&#xD;&#xA;      &quot;Index&quot;: 0,&#xD;&#xA;      &quot;ExtractUrl&quot;: true,&#xD;&#xA;      &quot;NameUrl&quot;: &quot;url&quot;&#xD;&#xA;    },&#xD;&#xA;    {&#xD;&#xA;      &quot;Name&quot;: &quot;bonho&quot;,&#xD;&#xA;      &quot;Tag&quot;: &quot;strong&quot;,&#xD;&#xA;      &quot;Attribute&quot;: null,&#xD;&#xA;      &quot;ClassName&quot;: &quot;&quot;,&#xD;&#xA;      &quot;Paths&quot;: [&#xD;&#xA;        &quot;div[2]/div[1]/div[3]/strong[1]&quot;&#xD;&#xA;      ],&#xD;&#xA;      &quot;Index&quot;: 0,&#xD;&#xA;      &quot;ExtractUrl&quot;: false,&#xD;&#xA;      &quot;NameUrl&quot;: null&#xD;&#xA;    },&#xD;&#xA;    {&#xD;&#xA;      &quot;Name&quot;: &quot;size&quot;,&#xD;&#xA;      &quot;Tag&quot;: &quot;span&quot;,&#xD;&#xA;      &quot;Attribute&quot;: null,&#xD;&#xA;      &quot;ClassName&quot;: &quot;&quot;,&#xD;&#xA;      &quot;Paths&quot;: [&#xD;&#xA;        &quot;div[2]/div[4]/div[1]/span[2]&quot;&#xD;&#xA;      ],&#xD;&#xA;      &quot;Index&quot;: 0,&#xD;&#xA;      &quot;ExtractUrl&quot;: false,&#xD;&#xA;      &quot;NameUrl&quot;: null&#xD;&#xA;    },&#xD;&#xA;    {&#xD;&#xA;      &quot;Name&quot;: &quot;gia&quot;,&#xD;&#xA;      &quot;Tag&quot;: &quot;div&quot;,&#xD;&#xA;      &quot;Attribute&quot;: null,&#xD;&#xA;      &quot;ClassName&quot;: &quot;progress&quot;,&#xD;&#xA;      &quot;Paths&quot;: [&#xD;&#xA;        &quot;div[2]/div[2]/div[1]&quot;,&#xD;&#xA;        &quot;div[2]/div[2]/div[1]/div[1]&quot;&#xD;&#xA;      ],&#xD;&#xA;      &quot;Index&quot;: 0,&#xD;&#xA;      &quot;ExtractUrl&quot;: false,&#xD;&#xA;      &quot;NameUrl&quot;: null&#xD;&#xA;    },&#xD;&#xA;    {&#xD;&#xA;      &quot;Name&quot;: &quot;giagoc&quot;,&#xD;&#xA;      &quot;Tag&quot;: &quot;strike&quot;,&#xD;&#xA;      &quot;Attribute&quot;: null,&#xD;&#xA;      &quot;ClassName&quot;: &quot;&quot;,&#xD;&#xA;      &quot;Paths&quot;: [&#xD;&#xA;        &quot;div[2]/div[2]/div[2]/strike[1]&quot;&#xD;&#xA;      ],&#xD;&#xA;      &quot;Index&quot;: 0,&#xD;&#xA;      &quot;ExtractUrl&quot;: false,&#xD;&#xA;      &quot;NameUrl&quot;: null&#xD;&#xA;    },&#xD;&#xA;    {&#xD;&#xA;      &quot;Name&quot;: &quot;ocung&quot;,&#xD;&#xA;      &quot;Tag&quot;: &quot;span&quot;,&#xD;&#xA;      &quot;Attribute&quot;: null,&#xD;&#xA;      &quot;ClassName&quot;: &quot;&quot;,&#xD;&#xA;      &quot;Paths&quot;: [&#xD;&#xA;        &quot;div[2]/div[4]/div[1]/span[3]&quot;&#xD;&#xA;      ],&#xD;&#xA;      &quot;Index&quot;: 0,&#xD;&#xA;      &quot;ExtractUrl&quot;: false,&#xD;&#xA;      &quot;NameUrl&quot;: null&#xD;&#xA;    }&#xD;&#xA;  ],&#xD;&#xA;  &quot;ScopeSelector&quot;: &quot;/html[1]/body[1]/div[2]/main[1]/div[1]/div[3]/div[2]/div[2]/div[1]/div[2]&quot;,&#xD;&#xA;  &quot;NextPageSelector&quot;: null,&#xD;&#xA;  &quot;MaxNumberResult&quot;: 100,&#xD;&#xA;  &quot;ExtractTable&quot;: false&#xD;&#xA;}" TimeoutMS="30000" />
+                  <rab:ExtractStructuredData Browser="{x:Null}" ContinueOnError="{x:Null}" Html="{x:Null}" DelayBetweenPagesMS="1000" DisplayName="[241230280] Extract Structured Data(B)" sap2010:WorkflowViewState.IdRef="ExtractStructuredData_1" MaxNumberResult="100" Result="[Data]" Selector="{}{&#xD;&#xA;  &quot;Columns&quot;: [&#xD;&#xA;    {&#xD;&#xA;      &quot;Name&quot;: &quot;Column1&quot;,&#xD;&#xA;      &quot;Tag&quot;: &quot;a&quot;,&#xD;&#xA;      &quot;Attribute&quot;: null,&#xD;&#xA;      &quot;ClassName&quot;: &quot;cdt-product__name&quot;,&#xD;&#xA;      &quot;Paths&quot;: [&#xD;&#xA;        &quot;div[2]/h3[1]/a[1]&quot;&#xD;&#xA;      ],&#xD;&#xA;      &quot;Index&quot;: 0,&#xD;&#xA;      &quot;ExtractUrl&quot;: true,&#xD;&#xA;      &quot;NameUrl&quot;: &quot;Url1&quot;&#xD;&#xA;    },&#xD;&#xA;    {&#xD;&#xA;      &quot;Name&quot;: &quot;gia&quot;,&#xD;&#xA;      &quot;Tag&quot;: &quot;div&quot;,&#xD;&#xA;      &quot;Attribute&quot;: null,&#xD;&#xA;      &quot;ClassName&quot;: &quot;progress&quot;,&#xD;&#xA;      &quot;Paths&quot;: [&#xD;&#xA;        &quot;div[2]/div[2]/div[1]&quot;,&#xD;&#xA;        &quot;div[2]/div[1]/div[1]/div[1]&quot;&#xD;&#xA;      ],&#xD;&#xA;      &quot;Index&quot;: 0,&#xD;&#xA;      &quot;ExtractUrl&quot;: false,&#xD;&#xA;      &quot;NameUrl&quot;: null&#xD;&#xA;    },&#xD;&#xA;    {&#xD;&#xA;      &quot;Name&quot;: &quot;gia1&quot;,&#xD;&#xA;      &quot;Tag&quot;: &quot;div&quot;,&#xD;&#xA;      &quot;Attribute&quot;: null,&#xD;&#xA;      &quot;ClassName&quot;: &quot;price&quot;,&#xD;&#xA;      &quot;Paths&quot;: [&#xD;&#xA;        &quot;div[2]/div[1]/div[1]/div[1]&quot;,&#xD;&#xA;        &quot;div[2]/div[2]/div[1]/div[1]&quot;&#xD;&#xA;      ],&#xD;&#xA;      &quot;Index&quot;: 0,&#xD;&#xA;      &quot;ExtractUrl&quot;: false,&#xD;&#xA;      &quot;NameUrl&quot;: null&#xD;&#xA;    },&#xD;&#xA;    {&#xD;&#xA;      &quot;Name&quot;: &quot;gia2&quot;,&#xD;&#xA;      &quot;Tag&quot;: &quot;div&quot;,&#xD;&#xA;      &quot;Attribute&quot;: null,&#xD;&#xA;      &quot;ClassName&quot;: &quot;progress&quot;,&#xD;&#xA;      &quot;Paths&quot;: [&#xD;&#xA;        &quot;div[2]/div[1]/div[1]&quot;,&#xD;&#xA;        &quot;div[2]/div[2]/div[1]&quot;&#xD;&#xA;      ],&#xD;&#xA;      &quot;Index&quot;: 0,&#xD;&#xA;      &quot;ExtractUrl&quot;: false,&#xD;&#xA;      &quot;NameUrl&quot;: null&#xD;&#xA;    },&#xD;&#xA;    {&#xD;&#xA;      &quot;Name&quot;: &quot;bonho&quot;,&#xD;&#xA;      &quot;Tag&quot;: &quot;strong&quot;,&#xD;&#xA;      &quot;Attribute&quot;: null,&#xD;&#xA;      &quot;ClassName&quot;: &quot;&quot;,&#xD;&#xA;      &quot;Paths&quot;: [&#xD;&#xA;        &quot;div[2]/div[1]/div[1]/strong[1]&quot;&#xD;&#xA;      ],&#xD;&#xA;      &quot;Index&quot;: 0,&#xD;&#xA;      &quot;ExtractUrl&quot;: false,&#xD;&#xA;      &quot;NameUrl&quot;: null&#xD;&#xA;    },&#xD;&#xA;    {&#xD;&#xA;      &quot;Name&quot;: &quot;o cung&quot;,&#xD;&#xA;      &quot;Tag&quot;: &quot;span&quot;,&#xD;&#xA;      &quot;Attribute&quot;: null,&#xD;&#xA;      &quot;ClassName&quot;: &quot;&quot;,&#xD;&#xA;      &quot;Paths&quot;: [&#xD;&#xA;        &quot;div[2]/div[4]/div[1]/span[3]&quot;,&#xD;&#xA;        &quot;div[2]/div[3]/div[1]/span[3]&quot;&#xD;&#xA;      ],&#xD;&#xA;      &quot;Index&quot;: 0,&#xD;&#xA;      &quot;ExtractUrl&quot;: false,&#xD;&#xA;      &quot;NameUrl&quot;: null&#xD;&#xA;    },&#xD;&#xA;    {&#xD;&#xA;      &quot;Name&quot;: &quot;size&quot;,&#xD;&#xA;      &quot;Tag&quot;: &quot;span&quot;,&#xD;&#xA;      &quot;Attribute&quot;: null,&#xD;&#xA;      &quot;ClassName&quot;: &quot;&quot;,&#xD;&#xA;      &quot;Paths&quot;: [&#xD;&#xA;        &quot;div[2]/div[4]/div[1]/span[2]&quot;,&#xD;&#xA;        &quot;div[2]/div[3]/div[1]/span[2]&quot;&#xD;&#xA;      ],&#xD;&#xA;      &quot;Index&quot;: 0,&#xD;&#xA;      &quot;ExtractUrl&quot;: false,&#xD;&#xA;      &quot;NameUrl&quot;: null&#xD;&#xA;    },&#xD;&#xA;    {&#xD;&#xA;      &quot;Name&quot;: &quot;bonho1&quot;,&#xD;&#xA;      &quot;Tag&quot;: &quot;span&quot;,&#xD;&#xA;      &quot;Attribute&quot;: null,&#xD;&#xA;      &quot;ClassName&quot;: &quot;&quot;,&#xD;&#xA;      &quot;Paths&quot;: [&#xD;&#xA;        &quot;div[2]/div[4]/div[1]/span[4]&quot;,&#xD;&#xA;        &quot;div[2]/div[3]/div[1]/span[4]&quot;&#xD;&#xA;      ],&#xD;&#xA;      &quot;Index&quot;: 0,&#xD;&#xA;      &quot;ExtractUrl&quot;: false,&#xD;&#xA;      &quot;NameUrl&quot;: null&#xD;&#xA;    },&#xD;&#xA;    {&#xD;&#xA;      &quot;Name&quot;: &quot;giadagiam&quot;,&#xD;&#xA;      &quot;Tag&quot;: &quot;strike&quot;,&#xD;&#xA;      &quot;Attribute&quot;: null,&#xD;&#xA;      &quot;ClassName&quot;: &quot;&quot;,&#xD;&#xA;      &quot;Paths&quot;: [&#xD;&#xA;        &quot;div[2]/div[2]/div[2]/strike[1]&quot;&#xD;&#xA;      ],&#xD;&#xA;      &quot;Index&quot;: 0,&#xD;&#xA;      &quot;ExtractUrl&quot;: false,&#xD;&#xA;      &quot;NameUrl&quot;: null&#xD;&#xA;    }&#xD;&#xA;  ],&#xD;&#xA;  &quot;ScopeSelector&quot;: &quot;/html[1]/body[1]/div[2]/main[1]/div[1]/div[3]/div[2]/div[2]/div[1]/div[2]&quot;,&#xD;&#xA;  &quot;NextPageSelector&quot;: &quot;.//*[@id='root']/main/div/div[3]/div[2]/div[2]/div/div[2]/div[1]/div[2]/h3/a&quot;,&#xD;&#xA;  &quot;MaxNumberResult&quot;: 100,&#xD;&#xA;  &quot;ExtractTable&quot;: false&#xD;&#xA;}" TimeoutMS="30000" />
+                  <rab:ExtractStructuredData Browser="{x:Null}" ContinueOnError="{x:Null}" Html="{x:Null}" DelayBetweenPagesMS="1000" DisplayName="[346249411] Extract Structured Data(B)" sap2010:WorkflowViewState.IdRef="ExtractStructuredData_2" MaxNumberResult="100" Result="[Data1]" Selector="{}{&#xD;&#xA;  &quot;Columns&quot;: [&#xD;&#xA;    {&#xD;&#xA;      &quot;Name&quot;: &quot;name&quot;,&#xD;&#xA;      &quot;Tag&quot;: &quot;a&quot;,&#xD;&#xA;      &quot;Attribute&quot;: null,&#xD;&#xA;      &quot;ClassName&quot;: &quot;cdt-product__name&quot;,&#xD;&#xA;      &quot;Paths&quot;: [&#xD;&#xA;        &quot;div[2]/h3[1]/a[1]&quot;&#xD;&#xA;      ],&#xD;&#xA;      &quot;Index&quot;: 0,&#xD;&#xA;      &quot;ExtractUrl&quot;: true,&#xD;&#xA;      &quot;NameUrl&quot;: &quot;Url1&quot;&#xD;&#xA;    },&#xD;&#xA;    {&#xD;&#xA;      &quot;Name&quot;: &quot;bonho&quot;,&#xD;&#xA;      &quot;Tag&quot;: &quot;strong&quot;,&#xD;&#xA;      &quot;Attribute&quot;: null,&#xD;&#xA;      &quot;ClassName&quot;: &quot;&quot;,&#xD;&#xA;      &quot;Paths&quot;: [&#xD;&#xA;        &quot;div[2]/div[1]/div[2]/strong[1]&quot;&#xD;&#xA;      ],&#xD;&#xA;      &quot;Index&quot;: 0,&#xD;&#xA;      &quot;ExtractUrl&quot;: false,&#xD;&#xA;      &quot;NameUrl&quot;: null&#xD;&#xA;    },&#xD;&#xA;    {&#xD;&#xA;      &quot;Name&quot;: &quot;size&quot;,&#xD;&#xA;      &quot;Tag&quot;: &quot;span&quot;,&#xD;&#xA;      &quot;Attribute&quot;: null,&#xD;&#xA;      &quot;ClassName&quot;: &quot;&quot;,&#xD;&#xA;      &quot;Paths&quot;: [&#xD;&#xA;        &quot;div[2]/div[4]/div[1]/span[2]&quot;&#xD;&#xA;      ],&#xD;&#xA;      &quot;Index&quot;: 0,&#xD;&#xA;      &quot;ExtractUrl&quot;: false,&#xD;&#xA;      &quot;NameUrl&quot;: null&#xD;&#xA;    },&#xD;&#xA;    {&#xD;&#xA;      &quot;Name&quot;: &quot;giamua&quot;,&#xD;&#xA;      &quot;Tag&quot;: &quot;div&quot;,&#xD;&#xA;      &quot;Attribute&quot;: null,&#xD;&#xA;      &quot;ClassName&quot;: &quot;progress&quot;,&#xD;&#xA;      &quot;Paths&quot;: [&#xD;&#xA;        &quot;div[2]/div[2]/div[1]&quot;,&#xD;&#xA;        &quot;div[2]/div[2]/div[1]/div[1]&quot;&#xD;&#xA;      ],&#xD;&#xA;      &quot;Index&quot;: 0,&#xD;&#xA;      &quot;ExtractUrl&quot;: false,&#xD;&#xA;      &quot;NameUrl&quot;: null&#xD;&#xA;    },&#xD;&#xA;    {&#xD;&#xA;      &quot;Name&quot;: &quot;giagoc&quot;,&#xD;&#xA;      &quot;Tag&quot;: &quot;strike&quot;,&#xD;&#xA;      &quot;Attribute&quot;: null,&#xD;&#xA;      &quot;ClassName&quot;: &quot;&quot;,&#xD;&#xA;      &quot;Paths&quot;: [&#xD;&#xA;        &quot;div[2]/div[2]/div[2]/strike[1]&quot;&#xD;&#xA;      ],&#xD;&#xA;      &quot;Index&quot;: 0,&#xD;&#xA;      &quot;ExtractUrl&quot;: false,&#xD;&#xA;      &quot;NameUrl&quot;: null&#xD;&#xA;    },&#xD;&#xA;    {&#xD;&#xA;      &quot;Name&quot;: &quot;ocung&quot;,&#xD;&#xA;      &quot;Tag&quot;: &quot;span&quot;,&#xD;&#xA;      &quot;Attribute&quot;: null,&#xD;&#xA;      &quot;ClassName&quot;: &quot;&quot;,&#xD;&#xA;      &quot;Paths&quot;: [&#xD;&#xA;        &quot;div[2]/div[4]/div[1]/span[3]&quot;&#xD;&#xA;      ],&#xD;&#xA;      &quot;Index&quot;: 0,&#xD;&#xA;      &quot;ExtractUrl&quot;: false,&#xD;&#xA;      &quot;NameUrl&quot;: null&#xD;&#xA;    }&#xD;&#xA;  ],&#xD;&#xA;  &quot;ScopeSelector&quot;: &quot;/html[1]/body[1]/div[2]/main[1]/div[1]/div[3]/div[2]/div[2]/div[1]/div[2]&quot;,&#xD;&#xA;  &quot;NextPageSelector&quot;: null,&#xD;&#xA;  &quot;MaxNumberResult&quot;: 100,&#xD;&#xA;  &quot;ExtractTable&quot;: false&#xD;&#xA;}" TimeoutMS="30000" />
+                </Sequence>
+              </rac:CommentOut.Body>
+            </rac:CommentOut>
+          </Sequence>
+        </ActivityAction>
+      </rab:OpenBrowser.Body>
+    </rab:OpenBrowser>
+    <rae:ExcelApplicationScope ExcelProperties="{x:Null}" Password="{x:Null}" AutoSave="True" BreakLinks="False" DisplayName="[698295973] Excel Application Scope" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_6" WorkbookPath="data\dataHNAM5.xlsx">
+      <rae:ExcelApplicationScope.Body>
+        <ActivityAction x:TypeArguments="re:WorkbookApplication">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="re:WorkbookApplication" Name="ExcelWorkbookScope" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="[698297972] Do" sap2010:WorkflowViewState.IdRef="Sequence_10">
+            <rae:ExcelWriteRange AddHeaders="False" DataTable="[datahnam1]" DisplayName="[698299970] Excel Write Range" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_6" SheetName="Sheet1" StartingCell="A1" />
+          </Sequence>
+        </ActivityAction>
+      </rae:ExcelApplicationScope.Body>
+    </rae:ExcelApplicationScope>
+    <rac:CommentOut DisplayName="[618556963] Comment Out" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+      <rac:CommentOut.Body>
+        <Sequence DisplayName="[618558961] Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="re:WorkbookApplication" Name="DataTGDD1" />
+          </Sequence.Variables>
+          <rae:ExcelApplicationScope ExcelProperties="{x:Null}" Password="{x:Null}" AutoSave="True" BreakLinks="False" DisplayName="[861346072] Excel Application Scope" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_5" WorkbookPath="data\dataTGDD2.xlsx">
+            <rae:ExcelApplicationScope.Body>
+              <ActivityAction x:TypeArguments="re:WorkbookApplication">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="re:WorkbookApplication" Name="ExcelWorkbookScope" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="[861348072] Do" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                  <rae:ExcelWriteRange AddHeaders="False" DataTable="[dataTGDD2]" DisplayName="[861350069] Excel Write Range" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_5" SheetName="Sheet1" StartingCell="A1" />
+                </Sequence>
+              </ActivityAction>
+            </rae:ExcelApplicationScope.Body>
+          </rae:ExcelApplicationScope>
+          <rae:ExcelApplicationScope ExcelProperties="{x:Null}" Password="{x:Null}" AutoSave="True" BreakLinks="False" DisplayName="[695751322] Excel Application Scope" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_4" WorkbookPath="data\dataTGDD1.xlsx">
+            <rae:ExcelApplicationScope.Body>
+              <ActivityAction x:TypeArguments="re:WorkbookApplication">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="re:WorkbookApplication" Name="ExcelWorkbookScope" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="[695753322] Do" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <rae:ExcelWriteRange AddHeaders="False" DataTable="[dataTGDD1]" DisplayName="[695755319] Excel Write Range" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_4" SheetName="Sheet1" StartingCell="A1" />
+                </Sequence>
+              </ActivityAction>
+            </rae:ExcelApplicationScope.Body>
+          </rae:ExcelApplicationScope>
+          <rae:ExcelApplicationScope ExcelProperties="{x:Null}" Password="{x:Null}" AutoSave="True" BreakLinks="False" DisplayName="[419467328] Excel Application Scope" ExistingWorkbook="[DataTGDD1]" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_3" WorkbookPath="data\datafpt3.xlsx">
+            <rae:ExcelApplicationScope.Body>
+              <ActivityAction x:TypeArguments="re:WorkbookApplication">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="re:WorkbookApplication" Name="ExcelWorkbookScope" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="[419470328] Do" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <rae:ExcelWriteRange AddHeaders="False" DataTable="[Data2]" DisplayName="[419472323] Excel Write Range" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_3" SheetName="Sheet1" StartingCell="A1" />
+                </Sequence>
+              </ActivityAction>
+            </rae:ExcelApplicationScope.Body>
+          </rae:ExcelApplicationScope>
+          <rae:ExcelApplicationScope ExcelProperties="{x:Null}" Password="{x:Null}" AutoSave="True" BreakLinks="False" DisplayName="[255717263] Excel Application Scope" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" WorkbookPath="data\datafpt1.xlsx">
+            <rae:ExcelApplicationScope.Body>
+              <ActivityAction x:TypeArguments="re:WorkbookApplication">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="re:WorkbookApplication" Name="ExcelWorkbookScope" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="[255721257] Do" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <rae:ExcelWriteRange AddHeaders="False" DataTable="[Data]" DisplayName="[033067484] Excel Write Range" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_1" SheetName="Sheet1" StartingCell="A1" />
+                </Sequence>
+              </ActivityAction>
+            </rae:ExcelApplicationScope.Body>
+          </rae:ExcelApplicationScope>
+          <rae:ExcelApplicationScope ExcelProperties="{x:Null}" Password="{x:Null}" AutoSave="True" BreakLinks="False" DisplayName="[160114103] Excel Application Scope" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" WorkbookPath="data\datafpt2.xlsx">
+            <rae:ExcelApplicationScope.Body>
+              <ActivityAction x:TypeArguments="re:WorkbookApplication">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="re:WorkbookApplication" Name="ExcelWorkbookScope" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="[160116144] Do" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <rae:ExcelWriteRange AddHeaders="False" DataTable="[Data1]" DisplayName="[160118100] Excel Write Range" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_2" SheetName="Sheet1" StartingCell="A1" />
+                </Sequence>
+              </ActivityAction>
+            </rae:ExcelApplicationScope.Body>
+          </rae:ExcelApplicationScope>
+        </Sequence>
+      </rac:CommentOut.Body>
+    </rac:CommentOut>
+    <sads:DebugSymbol.Symbol>dzxDOlxVc2Vyc1xkdXltYVxPbmVEcml2ZVxEb2N1bWVudHNcYWthQm90XERhdGFfVFRDU1xkYXRhLnhhbWwUPAOuAQ4CAQFFBVsXAgELXAVnIQIBA2gFrAEWAgECRcMBRcoBAgEWRbUDRf4DAgEVSwtYFgIBDFzrAVyAAgIBCmILZBYCAQRMDUyIFwIBDk0NVx4CAQ1jDWPUAQIBBUykAkzzFgIBFEx6TIABAgETTP4WTIUXAgESTIACTIUCAgERTI0CTJoCAgEPY80BY9EBAgEJYz9jTAIBB2O3AWO/AQIBBg==</sads:DebugSymbol.Symbol>
+  </Sequence>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="ExtractStructuredData_6" sap:VirtualizedContainerService.HintSize="416,68" />
+      <sap2010:ViewStateData Id="ExtractStructuredData_5" sap:VirtualizedContainerService.HintSize="314,68" />
+      <sap2010:ViewStateData Id="ExtractStructuredData_4" sap:VirtualizedContainerService.HintSize="314,68" />
+      <sap2010:ViewStateData Id="ExtractStructuredData_3" sap:VirtualizedContainerService.HintSize="314,68" />
+      <sap2010:ViewStateData Id="ExtractStructuredData_1" sap:VirtualizedContainerService.HintSize="314,68" />
+      <sap2010:ViewStateData Id="ExtractStructuredData_2" sap:VirtualizedContainerService.HintSize="314,68" />
+      <sap2010:ViewStateData Id="Sequence_4" sap:VirtualizedContainerService.HintSize="336,624">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="CommentOut_1" sap:VirtualizedContainerService.HintSize="416,702" />
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="438,934">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="OpenBrowser_1" sap:VirtualizedContainerService.HintSize="452,1033" />
+      <sap2010:ViewStateData Id="ExcelWriteRange_6" sap:VirtualizedContainerService.HintSize="314,87" />
+      <sap2010:ViewStateData Id="Sequence_10" sap:VirtualizedContainerService.HintSize="336,211">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="ExcelApplicationScope_6" sap:VirtualizedContainerService.HintSize="452,320" />
+      <sap2010:ViewStateData Id="ExcelWriteRange_5" sap:VirtualizedContainerService.HintSize="314,87" />
+      <sap2010:ViewStateData Id="Sequence_9" sap:VirtualizedContainerService.HintSize="336,211">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="ExcelApplicationScope_5" sap:VirtualizedContainerService.HintSize="414,320" />
+      <sap2010:ViewStateData Id="ExcelWriteRange_4" sap:VirtualizedContainerService.HintSize="314,87" />
+      <sap2010:ViewStateData Id="Sequence_8" sap:VirtualizedContainerService.HintSize="336,211">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="ExcelApplicationScope_4" sap:VirtualizedContainerService.HintSize="414,320" />
+      <sap2010:ViewStateData Id="ExcelWriteRange_3" sap:VirtualizedContainerService.HintSize="314,87" />
+      <sap2010:ViewStateData Id="Sequence_7" sap:VirtualizedContainerService.HintSize="336,211">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="ExcelApplicationScope_3" sap:VirtualizedContainerService.HintSize="414,320" />
+      <sap2010:ViewStateData Id="ExcelWriteRange_1" sap:VirtualizedContainerService.HintSize="314,87" />
+      <sap2010:ViewStateData Id="Sequence_3" sap:VirtualizedContainerService.HintSize="336,211">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="ExcelApplicationScope_1" sap:VirtualizedContainerService.HintSize="414,320" />
+      <sap2010:ViewStateData Id="ExcelWriteRange_2" sap:VirtualizedContainerService.HintSize="314,87" />
+      <sap2010:ViewStateData Id="Sequence_5" sap:VirtualizedContainerService.HintSize="336,211">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="ExcelApplicationScope_2" sap:VirtualizedContainerService.HintSize="414,320" />
+      <sap2010:ViewStateData Id="Sequence_6" sap:VirtualizedContainerService.HintSize="436,1884">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="CommentOut_2" sap:VirtualizedContainerService.HintSize="452,1962" />
+      <sap2010:ViewStateData Id="Sequence_2" sap:VirtualizedContainerService.HintSize="474,3519">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="data_1" sap:VirtualizedContainerService.HintSize="514,3599" />
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</Activity>
